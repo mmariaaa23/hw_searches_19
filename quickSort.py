@@ -14,7 +14,10 @@ def quickSort(array):
                 equal.append(x)
             elif x > pivot:
                 greater.append(x)
-        return quickSort(less)+equal+quickSort(greater) # конкатинируем списки
+        return quickSort(less) + equal + quickSort(greater)  # конкатинируем списки
     else:  # В конце рекурсии: когда остается один элемент массива - его и возвращаем
         return array
 
+
+# сложность по времени - O(n log n) (худший случай) - т. к каждый раз мы делим "несортированную часть" на 2
+# сложность по памяти - O(3n) -> O(n)

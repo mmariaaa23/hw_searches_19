@@ -1,5 +1,3 @@
-# Python program for implementation of Bubble Sort
-
 def bubbleSort(arr):
     n = len(arr)
     swapped = False
@@ -14,13 +12,4 @@ def bubbleSort(arr):
             return
 
 
-# arr = [64, 34, 25, 12, 22, 11, 90]
-#
-# bubbleSort(arr)
-#
-# print("Sorted array is:")
-# for i in range(len(arr)):
-#     print("% d" % arr[i], end=" ")
-
-
-
+# сложность по времени - О(n^2), по памяти - О(1) (мутируем существующий массив)

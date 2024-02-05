@@ -18,3 +18,4 @@ def insertionSort(arr):
 # arr1 = [3,4,5,6,1,2,0]
 #
 # print(insertionShuffle(arr1))
+

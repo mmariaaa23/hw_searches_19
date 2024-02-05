@@ -77,9 +77,9 @@ class Apartment:
 
     def __gt__(self, other):  # >
         if self.total_area > other.total_area:
-            return True
-        elif self.total_area < other.total_area:
             return False
+        elif self.total_area < other.total_area:
+            return True
         else:
             if self.house_number > other.house_number:
                 return True
@@ -98,9 +98,9 @@ class Apartment:
 
     def __ge__(self, other):  # >=
         if self.total_area >= other.total_area:
-            return True
-        elif self.total_area < other.total_area:
             return False
+        elif self.total_area < other.total_area:
+            return True
         else:
             if self.house_number >= other.house_number:
                 return True
@@ -119,9 +119,9 @@ class Apartment:
 
     def __lt__(self, other):  # <
         if self.total_area < other.total_area:
-            return True
-        elif self.total_area > other.total_area:
             return False
+        elif self.total_area > other.total_area:
+            return True
         else:
             if self.house_number < other.house_number:
                 return True
@@ -140,9 +140,9 @@ class Apartment:
 
     def __le__(self, other):  # <
         if self.total_area <= other.total_area:
-            return True
-        elif self.total_area > other.total_area:
             return False
+        elif self.total_area > other.total_area:
+            return True
         else:
             if self.house_number <= other.house_number:
                 return True

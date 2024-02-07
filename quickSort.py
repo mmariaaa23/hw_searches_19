@@ -1,6 +1,4 @@
 def quickSort(array):
-    """Sort the array by using quicksort."""
-
     less = []
     equal = []
     greater = []

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['insertionsort_2epy_0',['insertionSort.py',['../insertion_sort_8py.html',1,'']]]
+  ['binary_5ftree_5fsearch_2epy_0',['binary_tree_search.py',['../binary__tree__search_8py.html',1,'']]]
 ];

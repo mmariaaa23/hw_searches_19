@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quicksort_0',['quickSort',['../namespacequick_sort.html',1,'']]]
+  ['main_0',['main',['../namespacemain.html',1,'']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['residents_5fnumber_0',['residents_number',['../classmain_1_1_apartment.html#a2949f16f01bf43c713a09b9fc55873ae',1,'main::Apartment']]]
+  ['nil_0',['NIL',['../classred__black__tree_1_1_red_black_tree.html#ac89d650b3a8500b1ab0a7fb7ecbf6614',1,'red_black_tree::RedBlackTree']]],
+  ['num_5frepeats_1',['num_repeats',['../namespacemain.html#a8c5818ef07f04b40b80b70e32d9cda27',1,'main']]]
 ];

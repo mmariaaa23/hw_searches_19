@@ -1,0 +1,130 @@
+\doxysection{hashtable.\+Hash\+Table Class Reference}
+\hypertarget{classhashtable_1_1_hash_table}{}\label{classhashtable_1_1_hash_table}\index{hashtable.HashTable@{hashtable.HashTable}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhashtable_1_1_hash_table_aeceed5ad706de4cd4d11b610aeeb53bc}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classhashtable_1_1_hash_table_a8a4cae098c45334050d161c0606690be}{size}}=100)
+\item 
+\mbox{\hyperlink{classhashtable_1_1_hash_table_aebf4e520a91036d2ee7767f853ececc9}{hash\+\_\+function}} (self, key)
+\item 
+\mbox{\hyperlink{classhashtable_1_1_hash_table_af34b0725b846a1b922509cf2b11bd68a}{linear\+\_\+probing}} (self, index)
+\item 
+\mbox{\hyperlink{classhashtable_1_1_hash_table_a78ee663dee353b1a692d3f0c77d54fa6}{insert}} (self, apartment)
+\item 
+\mbox{\hyperlink{classhashtable_1_1_hash_table_ab968955922df6b57e418d7870999b9f5}{search}} (self, key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhashtable_1_1_hash_table_a8a4cae098c45334050d161c0606690be}{size}}
+\item 
+\mbox{\hyperlink{classhashtable_1_1_hash_table_aabf10b4430d638407ee776c86a2be64e}{table}}
+\item 
+\mbox{\hyperlink{classhashtable_1_1_hash_table_aced0aa2bed0a80a32da16754e0832328}{collisions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Класс HashTable для реализации хеш-таблицы с линейным опробованием.
+
+Attributes:
+    size (int): Размер хеш-таблицы.
+    table (list): Список для хранения данных квартир.
+    collisions (int): Количество коллизий при вставке.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhashtable_1_1_hash_table_aeceed5ad706de4cd4d11b610aeeb53bc}\label{classhashtable_1_1_hash_table_aeceed5ad706de4cd4d11b610aeeb53bc} 
+\index{hashtable.HashTable@{hashtable.HashTable}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!hashtable.HashTable@{hashtable.HashTable}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily hashtable.\+Hash\+Table.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{size = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Конструктор для HashTable.
+
+Args:
+    size (int): Размер хеш-таблицы.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhashtable_1_1_hash_table_aebf4e520a91036d2ee7767f853ececc9}\label{classhashtable_1_1_hash_table_aebf4e520a91036d2ee7767f853ececc9} 
+\index{hashtable.HashTable@{hashtable.HashTable}!hash\_function@{hash\_function}}
+\index{hash\_function@{hash\_function}!hashtable.HashTable@{hashtable.HashTable}}
+\doxysubsubsection{\texorpdfstring{hash\_function()}{hash\_function()}}
+{\footnotesize\ttfamily hashtable.\+Hash\+Table.\+hash\+\_\+function (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Хеш-функция для преобразования ключа в индекс таблицы.
+
+Args:
+    key (str): Ключ для генерации индекса.
+
+Returns:
+    int: Индекс в хеш-таблице.
+\end{DoxyVerb}
+ \Hypertarget{classhashtable_1_1_hash_table_a78ee663dee353b1a692d3f0c77d54fa6}\label{classhashtable_1_1_hash_table_a78ee663dee353b1a692d3f0c77d54fa6} 
+\index{hashtable.HashTable@{hashtable.HashTable}!insert@{insert}}
+\index{insert@{insert}!hashtable.HashTable@{hashtable.HashTable}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily hashtable.\+Hash\+Table.\+insert (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{apartment }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Вставляет объект квартиры в хеш-таблицу.
+
+Args:
+    apartment (Apartment): Объект квартиры для вставки.
+\end{DoxyVerb}
+ \Hypertarget{classhashtable_1_1_hash_table_af34b0725b846a1b922509cf2b11bd68a}\label{classhashtable_1_1_hash_table_af34b0725b846a1b922509cf2b11bd68a} 
+\index{hashtable.HashTable@{hashtable.HashTable}!linear\_probing@{linear\_probing}}
+\index{linear\_probing@{linear\_probing}!hashtable.HashTable@{hashtable.HashTable}}
+\doxysubsubsection{\texorpdfstring{linear\_probing()}{linear\_probing()}}
+{\footnotesize\ttfamily hashtable.\+Hash\+Table.\+linear\+\_\+probing (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Метод линейного опробования для решения коллизий в хеш-таблице.
+
+Args:
+    index (int): Текущий индекс в таблице.
+
+Returns:
+    int: Следующий индекс в таблице после решения коллизии.
+\end{DoxyVerb}
+ \Hypertarget{classhashtable_1_1_hash_table_ab968955922df6b57e418d7870999b9f5}\label{classhashtable_1_1_hash_table_ab968955922df6b57e418d7870999b9f5} 
+\index{hashtable.HashTable@{hashtable.HashTable}!search@{search}}
+\index{search@{search}!hashtable.HashTable@{hashtable.HashTable}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily hashtable.\+Hash\+Table.\+search (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Поиск квартиры по имени владельца.
+
+Args:
+    key (str): Имя владельца квартиры.
+
+Returns:
+    Apartment: Найденная квартира или None, если квартира не найдена.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classhashtable_1_1_hash_table_aced0aa2bed0a80a32da16754e0832328}\label{classhashtable_1_1_hash_table_aced0aa2bed0a80a32da16754e0832328} 
+\index{hashtable.HashTable@{hashtable.HashTable}!collisions@{collisions}}
+\index{collisions@{collisions}!hashtable.HashTable@{hashtable.HashTable}}
+\doxysubsubsection{\texorpdfstring{collisions}{collisions}}
+{\footnotesize\ttfamily hashtable.\+Hash\+Table.\+collisions}
+
+\Hypertarget{classhashtable_1_1_hash_table_a8a4cae098c45334050d161c0606690be}\label{classhashtable_1_1_hash_table_a8a4cae098c45334050d161c0606690be} 
+\index{hashtable.HashTable@{hashtable.HashTable}!size@{size}}
+\index{size@{size}!hashtable.HashTable@{hashtable.HashTable}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily hashtable.\+Hash\+Table.\+size}
+
+\Hypertarget{classhashtable_1_1_hash_table_aabf10b4430d638407ee776c86a2be64e}\label{classhashtable_1_1_hash_table_aabf10b4430d638407ee776c86a2be64e} 
+\index{hashtable.HashTable@{hashtable.HashTable}!table@{table}}
+\index{table@{table}!hashtable.HashTable@{hashtable.HashTable}}
+\doxysubsubsection{\texorpdfstring{table}{table}}
+{\footnotesize\ttfamily hashtable.\+Hash\+Table.\+table}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hashtable_8py}{hashtable.\+py}}\end{DoxyCompactItemize}

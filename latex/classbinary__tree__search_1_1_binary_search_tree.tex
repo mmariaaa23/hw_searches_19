@@ -1,0 +1,101 @@
+\doxysection{binary\+\_\+tree\+\_\+search.\+Binary\+Search\+Tree Class Reference}
+\hypertarget{classbinary__tree__search_1_1_binary_search_tree}{}\label{classbinary__tree__search_1_1_binary_search_tree}\index{binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbinary__tree__search_1_1_binary_search_tree_af7a62240ad8b6c249efd8d0e28e18101}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classbinary__tree__search_1_1_binary_search_tree_a0aa455dccb924941b71bc2ca4b2956e4}{insert}} (self, apartment)
+\item 
+\mbox{\hyperlink{classbinary__tree__search_1_1_binary_search_tree_a9d4bae9f8c65529c0f4ee16f0730c78b}{search}} (self, key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbinary__tree__search_1_1_binary_search_tree_a28a342dbe1ad49e74bb7180bc58c3545}{root}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbinary__tree__search_1_1_binary_search_tree_a5cf96aabe098ae120013604c8797810c}{\+\_\+insert}} (self, node, apartment)
+\item 
+\mbox{\hyperlink{classbinary__tree__search_1_1_binary_search_tree_a698cd78f6f58a4040dfc02b0663bcd73}{\+\_\+search}} (self, node, key)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbinary__tree__search_1_1_binary_search_tree_af7a62240ad8b6c249efd8d0e28e18101}\label{classbinary__tree__search_1_1_binary_search_tree_af7a62240ad8b6c249efd8d0e28e18101} 
+\index{binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily binary\+\_\+tree\+\_\+search.\+Binary\+Search\+Tree.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbinary__tree__search_1_1_binary_search_tree_a5cf96aabe098ae120013604c8797810c}\label{classbinary__tree__search_1_1_binary_search_tree_a5cf96aabe098ae120013604c8797810c} 
+\index{binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}!\_insert@{\_insert}}
+\index{\_insert@{\_insert}!binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{\_insert()}{\_insert()}}
+{\footnotesize\ttfamily binary\+\_\+tree\+\_\+search.\+Binary\+Search\+Tree.\+\_\+insert (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node,  }\item[{}]{apartment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Рекурсивный помощник для вставки новой квартиры в дерево.
+
+Args:
+    node (BinaryTreeNode): Узел, с которого начинается поиск места для вставки.
+    apartment (Apartment): Объект квартиры для вставки.
+\end{DoxyVerb}
+ \Hypertarget{classbinary__tree__search_1_1_binary_search_tree_a698cd78f6f58a4040dfc02b0663bcd73}\label{classbinary__tree__search_1_1_binary_search_tree_a698cd78f6f58a4040dfc02b0663bcd73} 
+\index{binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}!\_search@{\_search}}
+\index{\_search@{\_search}!binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{\_search()}{\_search()}}
+{\footnotesize\ttfamily binary\+\_\+tree\+\_\+search.\+Binary\+Search\+Tree.\+\_\+search (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node,  }\item[{}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Рекурсивный помощник для поиска квартиры в дереве.
+
+Args:
+    node (BinaryTreeNode): Узел, с которого начинается поиск.
+    key (str): Имя владельца квартиры для поиска.
+
+Returns:
+    Apartment: Найденная квартира или None, если квартира не найдена.
+\end{DoxyVerb}
+ \Hypertarget{classbinary__tree__search_1_1_binary_search_tree_a0aa455dccb924941b71bc2ca4b2956e4}\label{classbinary__tree__search_1_1_binary_search_tree_a0aa455dccb924941b71bc2ca4b2956e4} 
+\index{binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}!insert@{insert}}
+\index{insert@{insert}!binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily binary\+\_\+tree\+\_\+search.\+Binary\+Search\+Tree.\+insert (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{apartment }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Вставка новой квартиры в бинарное поисковое дерево.
+
+Args:
+    apartment (Apartment): Объект квартиры для вставки.
+\end{DoxyVerb}
+ \Hypertarget{classbinary__tree__search_1_1_binary_search_tree_a9d4bae9f8c65529c0f4ee16f0730c78b}\label{classbinary__tree__search_1_1_binary_search_tree_a9d4bae9f8c65529c0f4ee16f0730c78b} 
+\index{binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}!search@{search}}
+\index{search@{search}!binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily binary\+\_\+tree\+\_\+search.\+Binary\+Search\+Tree.\+search (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Поиск квартиры по имени владельца.
+
+Args:
+    key (str): Имя владельца квартиры для поиска.
+
+Returns:
+    Apartment: Найденная квартира или None, если квартира не найдена.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classbinary__tree__search_1_1_binary_search_tree_a28a342dbe1ad49e74bb7180bc58c3545}\label{classbinary__tree__search_1_1_binary_search_tree_a28a342dbe1ad49e74bb7180bc58c3545} 
+\index{binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}!root@{root}}
+\index{root@{root}!binary\_tree\_search.BinarySearchTree@{binary\_tree\_search.BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily binary\+\_\+tree\+\_\+search.\+Binary\+Search\+Tree.\+root}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{binary__tree__search_8py}{binary\+\_\+tree\+\_\+search.\+py}}\end{DoxyCompactItemize}

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['tmp_0',['tmp',['../namespacemain.html#abfba1439a27cf0628649363f45ba1445',1,'main']]],
-  ['total_5farea_1',['total_area',['../classmain_1_1_apartment.html#aa1e9eca50a51ce47bc072fd6d111cdeb',1,'main::Apartment']]]
+  ['parent_0',['parent',['../classred__black__tree_1_1_node.html#a842f8d9249099c26c328abfdd0807c36',1,'red_black_tree::Node']]]
 ];

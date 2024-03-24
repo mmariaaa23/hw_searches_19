@@ -1,0 +1,132 @@
+\doxysection{red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree Class Reference}
+\hypertarget{classred__black__tree_1_1_red_black_tree}{}\label{classred__black__tree_1_1_red_black_tree}\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classred__black__tree_1_1_red_black_tree_a77e4bb3f5f3df653eefa6ba12743cfc7}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classred__black__tree_1_1_red_black_tree_a0ed461477a98149fd2f9ae33cd17ba1c}{insert}} (self, key, data=None)
+\item 
+\mbox{\hyperlink{classred__black__tree_1_1_red_black_tree_a89a949320d98ea65252bab5325a5e76d}{find\+\_\+element}} (self, ptr, key)
+\item 
+\mbox{\hyperlink{classred__black__tree_1_1_red_black_tree_a6a9847724d9ab56fa2250280c91a1f3c}{build\+\_\+from\+\_\+list}} (self, apartment\+\_\+list)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classred__black__tree_1_1_red_black_tree_ac89d650b3a8500b1ab0a7fb7ecbf6614}{NIL}}
+\item 
+\mbox{\hyperlink{classred__black__tree_1_1_red_black_tree_af32e72a118eb850b8e274f551d40e1ff}{root}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classred__black__tree_1_1_red_black_tree_a58153d1b04a220541c3758d683153b8b}{\+\_\+fix\+\_\+insert}} (self, node)
+\item 
+\mbox{\hyperlink{classred__black__tree_1_1_red_black_tree_a21451243f155807e7e7158df750e6489}{\+\_\+left\+\_\+rotate}} (self, x)
+\item 
+\mbox{\hyperlink{classred__black__tree_1_1_red_black_tree_a746e5c93febf0fe6a20aeb0ce9281efb}{\+\_\+right\+\_\+rotate}} (self, y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Класс для представления красно-черного дерева.
+
+Attributes:
+    NIL: Специальный узел NIL, используемый для представления "пустых" листьев.
+    root: Корень дерева.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classred__black__tree_1_1_red_black_tree_a77e4bb3f5f3df653eefa6ba12743cfc7}\label{classred__black__tree_1_1_red_black_tree_a77e4bb3f5f3df653eefa6ba12743cfc7} 
+\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classred__black__tree_1_1_red_black_tree_a58153d1b04a220541c3758d683153b8b}\label{classred__black__tree_1_1_red_black_tree_a58153d1b04a220541c3758d683153b8b} 
+\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}!\_fix\_insert@{\_fix\_insert}}
+\index{\_fix\_insert@{\_fix\_insert}!red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{\_fix\_insert()}{\_fix\_insert()}}
+{\footnotesize\ttfamily red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree.\+\_\+fix\+\_\+insert (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Восстанавливает свойства красно-черного дерева после вставки нового узла.
+
+Args:
+    node: Узел, начиная с которого требуется восстановление свойств.
+\end{DoxyVerb}
+ \Hypertarget{classred__black__tree_1_1_red_black_tree_a21451243f155807e7e7158df750e6489}\label{classred__black__tree_1_1_red_black_tree_a21451243f155807e7e7158df750e6489} 
+\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}!\_left\_rotate@{\_left\_rotate}}
+\index{\_left\_rotate@{\_left\_rotate}!red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{\_left\_rotate()}{\_left\_rotate()}}
+{\footnotesize\ttfamily red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree.\+\_\+left\+\_\+rotate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classred__black__tree_1_1_red_black_tree_a746e5c93febf0fe6a20aeb0ce9281efb}\label{classred__black__tree_1_1_red_black_tree_a746e5c93febf0fe6a20aeb0ce9281efb} 
+\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}!\_right\_rotate@{\_right\_rotate}}
+\index{\_right\_rotate@{\_right\_rotate}!red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{\_right\_rotate()}{\_right\_rotate()}}
+{\footnotesize\ttfamily red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree.\+\_\+right\+\_\+rotate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classred__black__tree_1_1_red_black_tree_a6a9847724d9ab56fa2250280c91a1f3c}\label{classred__black__tree_1_1_red_black_tree_a6a9847724d9ab56fa2250280c91a1f3c} 
+\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}!build\_from\_list@{build\_from\_list}}
+\index{build\_from\_list@{build\_from\_list}!red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{build\_from\_list()}{build\_from\_list()}}
+{\footnotesize\ttfamily red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree.\+build\+\_\+from\+\_\+list (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{apartment\+\_\+list }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Строит красно-черное дерево на основе списка квартир.
+
+Args:
+    apartment_list: Список квартир для добавления в дерево.
+\end{DoxyVerb}
+ \Hypertarget{classred__black__tree_1_1_red_black_tree_a89a949320d98ea65252bab5325a5e76d}\label{classred__black__tree_1_1_red_black_tree_a89a949320d98ea65252bab5325a5e76d} 
+\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}!find\_element@{find\_element}}
+\index{find\_element@{find\_element}!red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{find\_element()}{find\_element()}}
+{\footnotesize\ttfamily red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree.\+find\+\_\+element (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ptr,  }\item[{}]{key }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Ищет элемент с ключом key, начиная с узла ptr.
+
+ Args:
+     ptr: Узел, с которого начинается поиск.
+     key: Ключ искомого элемента.
+
+ Returns:
+     Данные найденного элемента или None, если элемент не найден.\end{DoxyVerb}
+ \Hypertarget{classred__black__tree_1_1_red_black_tree_a0ed461477a98149fd2f9ae33cd17ba1c}\label{classred__black__tree_1_1_red_black_tree_a0ed461477a98149fd2f9ae33cd17ba1c} 
+\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}!insert@{insert}}
+\index{insert@{insert}!red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree.\+insert (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key,  }\item[{}]{data = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Вставляет узел с ключом key и данными data в красно-черное дерево.
+
+Args:
+    key: Ключ узла для вставки.
+    data: Данные узла для вставки.
+
+Описание метода вставки...
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classred__black__tree_1_1_red_black_tree_ac89d650b3a8500b1ab0a7fb7ecbf6614}\label{classred__black__tree_1_1_red_black_tree_ac89d650b3a8500b1ab0a7fb7ecbf6614} 
+\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}!NIL@{NIL}}
+\index{NIL@{NIL}!red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{NIL}{NIL}}
+{\footnotesize\ttfamily red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree.\+NIL}
+
+\Hypertarget{classred__black__tree_1_1_red_black_tree_af32e72a118eb850b8e274f551d40e1ff}\label{classred__black__tree_1_1_red_black_tree_af32e72a118eb850b8e274f551d40e1ff} 
+\index{red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}!root@{root}}
+\index{root@{root}!red\_black\_tree.RedBlackTree@{red\_black\_tree.RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily red\+\_\+black\+\_\+tree.\+Red\+Black\+Tree.\+root}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{red__black__tree_8py}{red\+\_\+black\+\_\+tree.\+py}}\end{DoxyCompactItemize}

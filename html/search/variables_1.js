@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['bubble_5ftimes_0',['bubble_times',['../namespacemain.html#ab1e3d4f9ac14e28f3e9cbc0877025dcf',1,'main']]]
+  ['b_0',['b',['../namespaceprog1.html#a0aff81da7e55217685c0e79c233d593b',1,'prog1']]],
+  ['bst_1',['bst',['../namespacemain.html#a47f3d344fb8f9af4ce1809cd94533cb5',1,'main']]]
 ];

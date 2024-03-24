@@ -5,17 +5,22 @@
 
 
 import pandas as pd
-from faker import Faker
+# from faker import Faker
 import time
 import matplotlib.pyplot as plt
+import numpy as np
+from collections import defaultdict
+import random
 
-from bubbleSort import bubbleSort
-from insertionSort import insertionSort
-from quickSort import quickSort
 
-fake = Faker("ru_RU")  # Single Faker instance with locale
+from apartment_class import Apartment
+from hashtable import HashTable
+from binary_tree_search import BinarySearchTree
+from red_black_tree import RedBlackTree
 
-df = pd.read_csv("/Users/avvemassha/PycharmProjects/pythonProject2/train.csv")
+# fake = Faker("ru_RU")  Single Faker instance with locale
+
+df = pd.read_csv("/Users/avvemassha/PycharmProjects/pythonProject2/train_extended.csv")
 
 # names_list = [fake.name() for _ in range(10000)]
 # df["owner_name"] = names_list
@@ -24,151 +29,40 @@ df = pd.read_csv("/Users/avvemassha/PycharmProjects/pythonProject2/train.csv")
 # df.to_csv("train.csv")
 
 
-# @brief разделяю датасет на наборы для сортировки
-
+"""создание датасетов"""
 df_1 = df[:500]  # 500
 df_1 = df_1.drop(["Rooms"], axis=1)
 df_1.to_csv("data_1.csv")
 
-df_2 = df[500:1100]  # 600
+df_2 = df[:5000]  # 600
 df_2 = df_2.drop(["Rooms"], axis=1)
 df_2.to_csv("data_2.csv")
 
-df_3 = df[1100:1700]  # 700
+df_3 = df[:10000]  # 700
 df_3 = df_3.drop(["Rooms"], axis=1)
 df_3.to_csv("data_3.csv")
 
-df_4 = df[1700:2500]  # 800
+df_4 = df[:20000]  # 800
 df_4 = df_4.drop(["Rooms"], axis=1)
 df_4.to_csv("data_4.csv")
 
-df_5 = df[2500:3400]  # 900
+df_5 = df[:40000]  # 900
 df_5 = df_5.drop(["Rooms"], axis=1)
 df_5.to_csv("data_5.csv")
 
-df_6 = df[3400:4400]  # 1000
+df_6 = df[:80000]  # 1000
 df_6 = df_6.drop(["Rooms"], axis=1)
 df_6.to_csv("data_6.csv")
 
-df_7 = df[4400:5500]  # 1100
+df_7 = df[:100000]  # 1100
 df_7 = df_7.drop(["Rooms"], axis=1)
 df_7.to_csv("data_7.csv")
 
-# df_8 = df[4000:4500]
-# df_8 = df_8.drop(["Rooms"], axis=1)
-# df_8.to_csv("data_8.csv")
 
 
-# @brief для перегрузки операторов сначала создаю класс объекта из датасета
-class Apartment:
-    def __init__(
-        self,
-        total_area: float,
-        house_number: int,
-        apartment_number: int,
-        owner_name: str,
-        residents_number: int,
-    ):
-        self.total_area = total_area
-        self.house_number = house_number
-        self.apartment_number = apartment_number
-        self.owner_name = owner_name
-        self.residents_number = residents_number
-
-    def __gt__(self, other):  # >
-        if self.total_area > other.total_area:
-            return False
-        elif self.total_area < other.total_area:
-            return True
-        else:
-            if self.house_number > other.house_number:
-                return True
-            elif self.house_number < other.house_number:
-                return False
-            else:
-                if self.apartment_number > other.apartment_number:
-                    return True
-                elif self.apartment_number < other.apartment_number:
-                    return False
-                else:
-                    if self.owner_name > other.owner_name:
-                        return True
-                    else:
-                        return False
-
-    def __ge__(self, other):  # >=
-        if self.total_area >= other.total_area:
-            return False
-        elif self.total_area < other.total_area:
-            return True
-        else:
-            if self.house_number >= other.house_number:
-                return True
-            elif self.house_number < other.house_number:
-                return False
-            else:
-                if self.apartment_number >= other.apartment_number:
-                    return True
-                elif self.apartment_number < other.apartment_number:
-                    return False
-                else:
-                    if self.owner_name >= other.owner_name:
-                        return True
-                    else:
-                        return False
-
-    def __lt__(self, other):  # <
-        if self.total_area < other.total_area:
-            return False
-        elif self.total_area > other.total_area:
-            return True
-        else:
-            if self.house_number < other.house_number:
-                return True
-            elif self.house_number > other.house_number:
-                return False
-            else:
-                if self.apartment_number < other.apartment_number:
-                    return True
-                elif self.apartment_number > other.apartment_number:
-                    return False
-                else:
-                    if self.owner_name < other.owner_name:
-                        return True
-                    else:
-                        return False
-
-    def __le__(self, other):  # <
-        if self.total_area <= other.total_area:
-            return False
-        elif self.total_area > other.total_area:
-            return True
-        else:
-            if self.house_number <= other.house_number:
-                return True
-            elif self.house_number > other.house_number:
-                return False
-            else:
-                if self.apartment_number <= other.apartment_number:
-                    return True
-                elif self.apartment_number > other.apartment_number:
-                    return False
-                else:
-                    if self.owner_name <= other.owner_name:
-                        return True
-                    else:
-                        return False
-
-
-# apartment1 = Apartment(100, 10, 1, "Иванов", 2)
-# apartment2 = Apartment(80, 12, 2, "Петров", 3)
-# print(apartment1 > apartment2)
-# print(apartment1 < apartment2)
-# print(apartment1 >= apartment2)
-# print(apartment1 <= apartment2)
-
-
-# @brief функции сортировок написаны для массивов, => формирую из датасетов правильный формат
+"""
+функции сортировок написаны для массивов, => формирую из датасетов правильный формат
+"""
 df_1 = pd.read_csv("data_1.csv")
 mas_1 = []
 for i in range(len(df_1)):
@@ -269,52 +163,125 @@ for i in mass:
     x.append(len(i))
 print(x)
 
-# @brief сортировка пузырьком
-bubble_times = []
-for i, mas in enumerate(mass):
-    tmp = mas[:]
-    start = time.time()
-    bubbleSort(tmp)
-    bubble_times.append(time.time() - start)
-    with open(f"bubble_{i + 1}.txt", "w") as f:
-        for elem in tmp:
-            f.write(
-                f"{elem.total_area} {elem.house_number} {elem.apartment_number} {elem.owner_name} {elem.residents_number}\n"
-            )
-print(bubble_times)
-plt.plot(x, bubble_times)
+# Размеры массивов для тестирования
+array_sizes = [len(mas_1), len(mas_2), len(mas_3), len(mas_4), len(mas_5), len(mas_6), len(mas_7)]
 
-# сортировка вставкой
-insertion_times = []
-for i, mas in enumerate(mass):
-    tmp = mas[:]
-    start = time.time()
-    insertionSort(tmp)
-    insertion_times.append(time.time() - start)
-    with open(f"insertion_{i+1}.txt", "w") as f:
-        for elem in tmp:
-            f.write(
-                f"{elem.total_area} {elem.house_number} {elem.apartment_number} {elem.owner_name} {elem.residents_number}\n"
-            )
-print(insertion_times)
-plt.plot(x, insertion_times)
+num_repeats = 10
+search_times = {'Binary Search': [], 'Hash Table Search': [], 'Multimap Search': [], 'RBS':[]}
 
-# @brief быстрая сортировка
-quick_times = []
-for i, mas in enumerate(mass):
-    tmp = mas[:]
-    start = time.time()
-    tmp = quickSort(tmp)
-    quick_times.append(time.time() - start)
-    with open(f"quick_{i+1}.txt", "w") as f:
-        for elem in tmp:
-            f.write(
-                f"{elem.total_area} {elem.house_number} {elem.apartment_number} {elem.owner_name} {elem.residents_number}\n"
-            )
-print(quick_times)
-plt.plot(x, quick_times)
+for size in array_sizes:
+    print(f"Testing for size: {size}")
+
+    test_array = mas_1[:size]  # Просто берем первый массив в mass
+
+    # 1. Бинарное дерево поиска
+    bst = BinarySearchTree()
+    for apartment in test_array:
+        bst.insert(apartment)
 
 
-# @brief отрисовка графиков
-plt.legend(("bubble", "insertion", "quick"))
+    start_time = time.time()
+    for _ in range(num_repeats):
+        key = test_array[0].owner_name  # Просто берем первый элемент
+        result = bst.search(key)
+    search_time = (time.time() - start_time) / num_repeats
+    search_times['Binary Search'].append(search_time)
+
+    # 2. Хэш-таблица
+    hash_table = HashTable(size)
+    for apartment in test_array:
+        hash_table.insert(apartment)
+
+    start_time = time.time()
+    for _ in range(num_repeats):
+        key = test_array[0].owner_name  # Просто берем первый элемент
+        result = hash_table.search(key)
+    search_time = (time.time() - start_time) / num_repeats
+    search_times['Hash Table Search'].append(search_time)
+
+    # 3. Multimap
+    multimap = defaultdict(list)
+    for apartment in test_array:
+        multimap[apartment.owner_name].append(apartment)
+
+    start_time = time.time()
+    for _ in range(num_repeats):
+        key = test_array[0].owner_name  # Просто берем первый элемент
+        result = multimap[key]
+    search_time = (time.time() - start_time) / num_repeats
+    search_times['Multimap Search'].append(search_time)
+
+    # 4. Red-Black Tree Search
+    red_black = RedBlackTree()
+    red_black.build_from_list(test_array)
+    start_time = time.time()
+
+    for _ in range(num_repeats):
+        key_1 = random.choice(test_array)
+        key = key_1.owner_name
+        result = red_black.find_element(red_black.root, key)
+    end_time = time.time()
+
+    search_time = (end_time - start_time) / num_repeats
+    search_times['RBS'].append(search_time)
+
+for method, times in search_times.items():
+    plt.plot(array_sizes, times, label=method)
+
+
+plt.title('Search Time vs. Array Size')
+plt.xlabel('Array Size')
+plt.ylabel('Search Time')
+plt.yscale('log')
+plt.legend()
 plt.show()
+
+#  сортировка пузырьком
+# bubble_times = []
+# for i, mas in enumerate(mass):
+#     tmp = mas[:]
+#     start = time.time()
+#     bubbleSort(tmp)
+#     bubble_times.append(time.time() - start)
+#     with open(f"bubble_{i + 1}.txt", "w") as f:
+#         for elem in tmp:
+#             f.write(
+#                 f"{elem.total_area} {elem.house_number} {elem.apartment_number} {elem.owner_name} {elem.residents_number}\n"
+#             )
+# print(bubble_times)
+# plt.plot(x, bubble_times)
+#
+# # сортировка вставкой
+# insertion_times = []
+# for i, mas in enumerate(mass):
+#     tmp = mas[:]
+#     start = time.time()
+#     insertionSort(tmp)
+#     insertion_times.append(time.time() - start)
+#     with open(f"insertion_{i+1}.txt", "w") as f:
+#         for elem in tmp:
+#             f.write(
+#                 f"{elem.total_area} {elem.house_number} {elem.apartment_number} {elem.owner_name} {elem.residents_number}\n"
+#             )
+# print(insertion_times)
+# plt.plot(x, insertion_times)
+#
+#  быстрая сортировка
+# quick_times = []
+# for i, mas in enumerate(mass):
+#     tmp = mas[:]
+#     start = time.time()
+#     tmp = quickSort(tmp)
+#     quick_times.append(time.time() - start)
+#     with open(f"quick_{i+1}.txt", "w") as f:
+#         for elem in tmp:
+#             f.write(
+#                 f"{elem.total_area} {elem.house_number} {elem.apartment_number} {elem.owner_name} {elem.residents_number}\n"
+#             )
+# print(quick_times)
+# plt.plot(x, quick_times)
+#
+#
+#  отрисовка графиков
+# plt.legend(("bubble", "insertion", "quick"))
+# plt.show()
